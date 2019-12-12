@@ -1,0 +1,45 @@
+{
+	"admin": {
+		"disabled": true
+	},
+	"logging": {
+		"sink": {
+			"writer": {}
+		},
+		"logs": {
+			"default": {
+				"writer": {},
+				"encoder": {},
+				"level": "info",
+				"sampling": {
+					"interval": "1s"
+				},
+				"include": [],
+				"exclude": []
+			}
+		}
+	},
+	"apps": {
+		"http": {
+			"servers": {
+				"myserver": {
+					"listen": [":80"],
+					"routes": [
+						{
+							"handle": [{
+								"handler": "file_server",
+								"root": "/var/www",
+								"hide": [],
+								"index_names": [],
+								"browse": {
+									"template_file": ""
+								},
+								"canonical_uris": true,
+								"pass_thru": false
+							}]
+						}]
+				}
+			}
+		}
+	}
+}

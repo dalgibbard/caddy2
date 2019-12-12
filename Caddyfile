@@ -1,0 +1,4 @@
+mysite.com:80 {
+    notls
+    root /www/mysite.com
+}
